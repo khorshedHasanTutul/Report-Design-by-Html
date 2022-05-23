@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h3 {
+  font-size: 1rem;
+}
+body {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+ul > li {
+  margin-left: 20px;
+  font-size: 0.8rem;
+  list-style: disc;
+}
+.information-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.prescription-img img {
+  width: 12%;
+  position: relative;
+  bottom: 30px;
+}
+.bottom-signature-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-bottom: 2px solid black;
+}
+.bottom-signature-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	border-bottom: 2px solid black;
+	font-weight: 600;
+}
+.prescription-img {
+  position: absolute;
+}
+.information-container .doctor-profile ul > li {
+  font-weight: 500;
+  padding: 2px 0;
+  list-style: none;
+  margin: 0;
+}
+.information-container .hospital-logo img {
+  width: 100%;
+  max-width: 220px;
+}
+.barcode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 0;
+}
+
+.barcode .barcode-img img {
+  width: 280px;
+  max-height: 24px;
+  object-fit: fill;
+}
+.bottom-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid black;
+}
+.bottom-info-container .bottom-info ul > li {
+  padding: 1px 0px;
+  font-weight: 600;
+  list-style: none;
+  margin: 0;
+}
+.footer-info ul > li {
+  list-style: none;
+  margin: 0;
+}
+/* .prescription__left-side ul {
+  list-style: none;
+} */
+.bottom-info-container .bottom-info .bottom-info__text {
+  font-weight: 400;
+  margin-left: 5px;
+}
+.bottom-left-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prescription-body-container {
+  display: flex;
+  margin-top: 45px;
+}
+.border-span {
+  content: "";
+  border-left: 2px solid black;
+  position: relative;
+  display: inline;
+  margin: 0 auto;
+  min-height: 460px;
+  max-height: 520px;
+}
+.right-pres-container {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+
+.signature-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  /* border-bottom: 2px solid black; */
+  margin-top: 30px;
+}
+ul.my-list > li {
+  list-style: none;
+}
+.medicine-routine {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.footer-info ul > li {
+	list-style: none;
+	font-weight: 600;
+}
+.bottom-info__text {
+	font-weight: 400;
+}
+.prescribed-medicine .medicine-name {
+	font-weight: 600;
+}
+.footer-area-address {
+	display: flex;
+	gap: 0.3rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+}
