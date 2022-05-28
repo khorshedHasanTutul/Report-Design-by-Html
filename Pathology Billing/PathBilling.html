@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pathology Billing</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style type="text/css" media="print">
+      @page {
+        size: auto;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -15,26 +21,32 @@
             <img src="assets/img/logo.png" alt="img" srcset="" />
           </div>
           <div class="header__address d-flex j-c-c a-i-c">
-            <p>21 Shamoli, Dhaka 1207 , Bangladesh, Phone: 0123456789</p>
+            <p>21 Shamoli, Mirpur Road Dhaka 1207 , Bangladesh</p>
+            <p>Phone: 0123456789</p>
+            <p>Hotline : 16000</p>
           </div>
-          <div class="header__details-date d-flex j-c-sb a-i-c">
+
+          <div class="header__details-date">
             <div class="header__serial">365</div>
             <div class="header_customer-copy">customer copy</div>
             <div class="header__date-time">
-              24/08/2021 <span>13.07.53</span>
+              <p>24/08/2021</p>
+              <!-- <p>13.07.53</p> -->
             </div>
           </div>
           <div class="header__details-billing__info d-flex j-c-sb flex-d-c">
-            <div class="billing__info-hnNo">
-              <strong>Hn No:H1235465</strong>
+            <div class="billing__info-hnNo bold">
+              <p>HN No.</p>
+              <span>:H1235465</span>
             </div>
-            <div class="billing__info-bill-container d-flex j-c-sb a-i-c">
-              <div class="billing__info-billNo">
-                <strong>Bill No:V21313541</strong>
+            <div class="billing__info-bill-container">
+              <div class="billing__info-billNo bold">
+                <p>Bill No.</p>
+                <span>:V21313541</span>
               </div>
-              <div class="billing__info-dateNo">
-                <strong>Date: 24/01/21</strong>
-                <strong>01.30 Am</strong>
+              <div class="billing__info-dateNo d-flex bold">
+                <p>Date: 24/01/21</p>
+                <p style="font-weight: bold">01.30 Am</p>
               </div>
               <div class="billing__info-barCode">
                 <img src="assets/img/barcode.png" alt="img" srcset="" />
@@ -42,22 +54,35 @@
             </div>
           </div>
         </div>
+
         <div class="header-container__bottomSection">
-          <div class="bottomSection-information d-flex j-c-sb">
-            <div class="info__name">Name : <strong>baby of Urmi</strong></div>
-            <div class="info__copy">
+          <div class="bottomSection-information">
+            <div class="info__name bold">
+              <p>Name</p>
+              <p>:Baby of Urmi</p>
+            </div>
+            <div class="info__copy billing__info-barCode bold">
               <p>Orginal Copy</p>
             </div>
           </div>
-          <div class="bottomSection-bio-info d-flex j-c-sb">
-            <p>Age <span>:10D</span></p>
-            <p>Gender <span>:Male</span></p>
-            <p>Contact No <span>:01704247162</span></p>
+          <div class="bottomSection-bio-info">
+            <div class="age bold">
+              <p>Age</p>
+              <p>:10D</p>
+            </div>
+            <div class="gender bold">
+              <p>Gender</p>
+              <p>:Male</p>
+            </div>
+            <div class="contact bold">
+              <p>Contact No</p>
+              <p>:01704247162</p>
+            </div>
           </div>
-          <div class="bottomSection-doc-info">
-            <p>
-              Ref. By <span>Prof. Dr. Ishrat Jahan Lucky, MBBS, FCPS, MD</span>
-            </p>
+
+          <div class="bottomSection-doc-info bold">
+            <p>Ref. By</p>
+            <p>Prof. Dr. Ishrat Jahan Lucky, MBBS, FCPS, MD</p>
           </div>
         </div>
       </div>
@@ -69,7 +94,7 @@
           <th>Code</th>
           <th>test Name</th>
           <th>S.Room</th>
-          <th>Price(Tk.)</th>
+          <th style="text-align: end">Price(Tk.)</th>
         </tr>
         <tr>
           <td>HaE06</td>
@@ -114,13 +139,14 @@
           <td>400.00</td>
         </tr>
       </table>
+
       <div class="table__bottom-info">
         <div class="table__bottom-remarks">
           <p>Remarks:</p>
         </div>
         <div class="table__bottom-container d-flex j-c-sb">
-          <div class="table__bottom-container-timing ">
-            <div class="bottom-container-timing d-flex j-c-sb">
+          <div class="table__bottom-container-timing">
+            <div class="bottom-container-timing d-flex j-c-sb bold">
               <p>Delivary Date:</p>
               <strong>24/08/21</strong>
               <strong>07.00:00 PM</strong>

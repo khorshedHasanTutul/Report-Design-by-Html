@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Birth Certificate</title>
+	<!-- google fonts -->
+	 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,900&display=swap" rel="stylesheet" />
+	 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"> 
+	 <style>
+	 	*{
+	 		margin: 0;
+	 		padding: 0;
+	 	}
+	 	 body {
+                font-family: "Poppins", sans-serif;
+                box-sizing: border-box;
+            }
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 0;
+                padding: 0;
+            }
+            .birth-container {
+				max-width: 700px;
+				width: 100%;
+				margin: 0 auto;
+				box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+				padding: 20px 30px 30px 30px;
+			}
+			table {
+	width: 100%;
+	margin-bottom: 10px;
+	max-width: 100%;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+			.birthCri_main_inner_content {
+				border: 5px solid #EE6E24;
+				padding: 10px;
+			}
+			.birthCri_main_items_middle {
+				border: 3px solid #CAC3B9;
+				padding: 20px;
+				padding-top: 5px;
+			}
+			.birthCri_header-content {
+	text-align: center;
+	padding-bottom: 50px;
+}
+             .birthCri-logo > img {
+				width: 194px;
+				height: auto;
+			}
+
+.birthCri-header-heading > h2 {
+	font-size: 30px;
+	display: inline-block;
+	border: 1px solid #EE6E24;
+	padding: 2px 35px;
+	border-radius: 50px;
+	font-weight: 600;
+	font-family: 'Caveat', cursive;
+	line-height: 1.1;
+	color: #000 !important;
+}
+.birthCri_half {
+	width: 50%;
+	position: relative;
+	z-index: 1;
+	padding: 8px 0px;
+	float: left;
+	overflow: hidden;
+}
+.birthCri_full{
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	padding: 8px 0px;
+}
+.birthCri_half::after {
+	position: absolute;
+	width: 99%;
+	height: 100%;
+	background: transparent;
+	top: -16px;
+	left: 0;
+	content: "";
+	border-bottom: 1px dotted #000;
+	z-index: -1;
+}
+.birthCri_full::after {
+	position: absolute;
+	width: 99%;
+	height: 100%;
+	background: transparent;
+	top: -16px;
+	left: 0;
+	content: "";
+	border-bottom: 1px dotted #000;
+	z-index: -1;
+}
+.birthCri_full > span {
+	background: #fff;
+	display: inline-block;
+	font-weight: 400;
+	text-transform: capitalize;
+	font-size: 16px;
+}
+.birthCri_half > span {
+	background: #fff;
+	display: inline-block;
+	font-weight: 400;
+	text-transform: capitalize;
+	font-size: 16px;
+}
+
+.birthCri_height {
+	height: 40px;
+}
+
+.birthCri_half.birthCri_signature {
+	text-align: center;
+	width: 40%;
+}
+
+.birthCri_half.birthCri_signature::after {
+	top: -35px;
+}
+
+.birthCri_new_row.signature_row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.birthCri-table-footer {
+	padding-top: 50px;
+}
+
+.birthCri-table-footer > h3 {
+	text-align: center;
+	color: #EE6E23;
+	font-size: 20px;
+	font-weight: 600;
+}
+.birthCri-table-footer > p {
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	color: #000;
+	font-weight: 400;
+	width: 80%;
+    margin: 0 auto;
+}
+
+.birthCri-table-footer > p > a {
+	text-decoration: none;
+	color: #000;
+}
+
+#birthCri_main{
+	margin: 20px 0px;
+}
+
+	 </style>
+</head>
+<body>
+	<div class="birthCri_main" id="birthCri_main">
+		<div class="birth-container">
+			<div class="birthCri_main_inner_content">
+				<div class="birthCri_main_items_middle">
+					<!-- header area -->
+					<div class="birthCri_header-content">
+						<div class="birthCri-logo">
+							<img src="logo.png" alt="logo">
+						</div>
+						<div class="birthCri-header-heading">
+							<h2>Birth Certificate</h2>
+						</div>
+					</div>
+					<!-- header area -->
+
+					<!-- table area -->
+					<div class="birthCri_table">
+						<table class="birthCri_main_table">
+							 <thead></thead>
+							 <tbody>
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row birthCri_one1">
+							 		<td class="birthCri_half">
+							 			<span>Newborn ID No.:  </span>
+							 		</td>
+							 		<td class="birthCri_half">
+							 			<span>SL No.:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<tr class="birthCri_height"></tr>
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_half">
+							 			<span>Name:  </span>
+							 		</td>
+							 		<td class="birthCri_half">
+							 			<span>Sex:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_half">
+							 			<span>Date & Time of Birth:  </span>
+							 		</td>
+							 		<td class="birthCri_half">
+							 			<span>Mothers ID No:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_full">
+							 			<span>Mother's Name:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_half">
+							 			<span>Nationality:  </span>
+							 		</td>
+							 		<td class="birthCri_half">
+							 			<span>Religion:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_full">
+							 			<span>Father's Name:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_half">
+							 			<span>Nationality:  </span>
+							 		</td>
+							 		<td class="birthCri_half">
+							 			<span>Religion:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_full">
+							 			<span>Present Address:</span>
+							 		</td>
+							 	</tr>
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_full">
+							 			<span></span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_full">
+							 			<span>Permanent Address:</span>
+							 		</td>
+							 	</tr>
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_full">
+							 			<span></span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 	<tr class="birthCri_height"></tr>
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row signature_row">
+							 		<td class="birthCri_half birthCri_signature">
+							 			<span>Certificate Issued By  </span>
+							 		</td>
+							 		<td class="birthCri_half birthCri_signature">
+							 			<span>Signature of the Authority:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+
+							 	<!-- single item -->
+							 	<tr class="birthCri_new_row">
+							 		<td class="birthCri_half">
+							 			<span>Date of Issue:</span>
+							 		</td>
+							 	</tr>
+							 	<!-- single item -->
+							 </tbody>
+						</table>
+					</div>
+					<!-- table area -->
+					<div class="birthCri-table-footer">
+						<h3>Platinum Hospital Limited </h3>
+						<p>69/M/1 GH Tower Panthapath, Kalabagan, Dhaka Bangladesh, Phone:01000000000, Hotline:12345</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,15 +8,22 @@ h3 {
   font-size: 1rem;
 }
 body {
-  font-size: 1rem;
-  font-family: "Poppins", sans-serif;
-  margin: 0 auto;
-  line-height: 1.5;
+	font-size: 1rem;
+	font-family: "Poppins", sans-serif;
+	margin: 0 auto;
+	line-height: 1.4;
+	padding: 10px 0;
 }
 ul > li {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   font-size: 0.8rem;
   list-style: disc;
+}
+.my-list > li ul > li {
+	margin-left: 20px;
+}
+.prescription__right-side {
+	margin-left: 20px;
 }
 .information-container {
   display: flex;
@@ -24,10 +31,15 @@ ul > li {
   align-items: center;
   flex-wrap: wrap;
 }
+.bottom-info ul > li {
+	display: grid;
+	grid-template-columns: 60px 1fr;
+}
 .prescription-img img {
-  width: 12%;
-  position: relative;
-  bottom: 30px;
+	width: 7%;
+	position: relative;
+	bottom: 35px;
+	right: 25px;
 }
 .bottom-signature-container {
   display: flex;
@@ -63,9 +75,9 @@ ul > li {
 }
 
 .barcode .barcode-img img {
-  width: 280px;
-  max-height: 24px;
-  object-fit: fill;
+	width: 180px;
+	max-height: 24px;
+	object-fit: fill;
 }
 .bottom-info-container {
   display: flex;
@@ -91,27 +103,40 @@ ul > li {
   margin-left: 5px;
 }
 .bottom-left-info-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 8rem;
+}
+.bottom-info-right-side ul > li p:first-child {
+	font-weight: 600;
+}
+.age-info {
+	display: grid;
+	grid-template-columns: 60px 1fr;
+}
+.bottom-info-right-side ul > li {
+	display: grid;
+	grid-template-columns: 80px 1fr;
 }
 
 .prescription-body-container {
-  display: flex;
-  margin-top: 45px;
+	margin-top: 45px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.footer-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .border-span {
-  content: "";
-  border-left: 2px solid black;
-  position: relative;
-  display: inline;
-  margin: 0 auto;
-  min-height: 460px;
-  max-height: 520px;
+	border-left: 2px solid black;
+	min-height: 570px;
+	max-height: 620px;
 }
 .right-pres-container {
-  position: relative;
-  margin: 0 auto;
+  /* position: relative; */
   display: flex;
 }
 

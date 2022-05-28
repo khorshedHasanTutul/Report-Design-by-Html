@@ -2,19 +2,19 @@
 * {
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  line-height: 1.2;
   list-style: none;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 strong {
   font-weight: 500;
 }
 body {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   box-sizing: border-box;
   text-transform: capitalize;
 }
@@ -39,13 +39,16 @@ body {
 .a-i-c {
   align-items: center;
 }
+.impression-section ul > li {
+  padding: 1px;
+}
 .impression-item {
   display: grid;
-  grid-template-columns: 120px 330px;
+  grid-template-columns: 100px 1fr;
 }
 .grid-row {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .header-container__logo img {
@@ -57,23 +60,37 @@ body {
   object-fit: fill;
 }
 .impression-section {
-	margin-top: 10px;
-	padding: 6px;
+  /* margin-top: 10px;
+  padding: 6px; */
+}
+.impression-item p:first-child,
+.impression-item-address p:first-child {
+  font-weight: bold;
 }
 table {
   width: 100%;
   border-bottom: 1px solid black;
   border-collapse: collapse;
   text-align: justify;
-  margin-top: 29px;
 }
 th {
   border-bottom: 1px solid black;
 }
+tr > th {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.table__bottom-container-summary > div:last-child p:first-child {
+  font-weight: bold;
+}
+.HnSection {
+	font-weight: bold;
+	font-size: 1rem;
+}
 
 td,
 th {
-  padding: 10px;
+  padding: 5px;
 }
 tr th:first-child,
 th:last-child {
@@ -82,7 +99,7 @@ th:last-child {
 
 .summary__item-total {
   border-bottom: 1px dashed black;
-  padding: 8px;
+  padding: 3px;
 }
 .table__bottom-container-summary {
   width: 40%;
@@ -91,9 +108,9 @@ th:last-child {
   margin-top: 30px;
 }
 .bottom-container-timing__status p {
-  padding: 5px;
+  padding: 2px;
   border: 1px solid black;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
   border-radius: 6px;
   display: inline-block;
@@ -105,13 +122,25 @@ th:last-child {
   margin: 8px 0;
 }
 .billing-officer {
-	padding: 10px;
-	margin-top: 35px;
+  padding: 10px;
+  margin-top: 35px;
 }
 .billing-officer h3 {
-	font-size: 1.25rem;
-	font-weight: 500;
+  font-size: 1rem;
+  font-weight: 500;
 }
 .table__bottom-container-summary .summary__item-total {
-	margin-right: 34px;
+  margin-right: 48px;
+}
+.impression-item-address {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+.grid-row-address {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.grid-row-department {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
