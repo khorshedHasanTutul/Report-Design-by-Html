@@ -17,6 +17,7 @@ body {
   font-size: 0.9rem;
   box-sizing: border-box;
   text-transform: capitalize;
+  padding: 10px 30px;
 }
 .d-flex {
   display: flex;
@@ -44,8 +45,7 @@ body {
   object-fit: fill;
 }
 .__headline-barcode img {
-  width: 180px;
-  height: 30px;
+  width: 170px;
 }
 .__ptinfo-invoice ul {
   display: flex;
@@ -74,9 +74,37 @@ body {
   gap: 5rem;
   flex: wrap;
 }
+.power {
+  position: absolute;
+  transform: rotate(-90deg);
+  display: flex;
+  left: -352px;
+  gap: 80px;
+}
+.page_22 {
+  position: relative;
+}
+.page_22 .power {
+  top: 40%;
+  bottom: inherit;
+}
+.page_22 {
+  position: relative;
+}
+.header-grid-report {
+	display: grid !important;
+	grid-template-columns: 73px 100px !important;
+}
+.power__bar-code {
+  width: 170px;
+  display: flex;
+}
+.power__bar-code img {
+  max-width: 100%;
+}
 .measure-container__item {
   display: grid;
-  grid-template-columns: 70% auto;
+  grid-template-columns: 65% 35%;
 }
 .grid-row {
   display: grid;
@@ -107,12 +135,55 @@ ul.list-remover > li {
 }
 .measure-container__box {
   display: grid;
-  grid-template-columns: repeat(4, 20%);
+  grid-template-columns: repeat(4, 25%);
   padding: 0 6px;
+}
+.address-info__all {
+  font-size: 0.8rem;
+}
+.__ptinfo-invoice ul {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+.__ptinfo-invoice ul > li {
+  display: grid;
+  grid-template-columns: 126px 1fr;
+}
+.__ptInfo-patinent {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.age {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+}
+.gender {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+}
+.__ptInfo-patient-name {
+  display: grid;
+  grid-template-columns: 127px 1fr;
+}
+.__ptinfo-doctor-info {
+  display: grid;
+  grid-template-columns: 127px 1fr;
 }
 .impression-section ul > li {
   margin-bottom: 4px;
 }
 .impression-section ul > li:first-child {
   margin-top: 3px;
+}
+.header-grid {
+  display: grid !important;
+  grid-template-columns: 96px 1fr !important;
+}
+.header-container {
+  font-size: 0.8rem;
+}
+.footer-address-section {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
