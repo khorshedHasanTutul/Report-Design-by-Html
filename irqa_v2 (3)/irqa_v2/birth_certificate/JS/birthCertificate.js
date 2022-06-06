@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+export const printHandler = (data) => {
+  let windowToPrint = window.open("", "PRINT", "height=800,width=1200");
+  windowToPrint.document.write("<!DOCTYPE html>");
+  printHeader(windowToPrint);
+  printContentHeader(windowToPrint, data.hospitalInfo);
+  printBabyInfo(windowToPrint, data.babyInfo);
+  printMotherInfo(windowToPrint, data.guarDianInfo.motherInfo);
+  printFatherInfo(windowToPrint, data.guarDianInfo.fatherInfo);
+  printSignatureIssue(windowToPrint, data.hospitalInfo.issueDate);
+  printFooterAddress(windowToPrint, data.AddressDTO);
+  windowToPrint.document.write(`</body></html>`);
+  windowToPrint.document.close();
+  windowToPrint.focus();
+};
+
+const printHeader = (windowToPrint) => {
+  windowToPrint.document.write(`
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -124,7 +140,7 @@
         display: inline-block;
         font-weight: 400;
         text-transform: capitalize;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .birthCri_height {
@@ -174,172 +190,172 @@
         margin: 20px 0px;
       }
     </style>
-  </head>
+  </head>`);
+};
 
-  <body>
-    <div class="birthCri_main" id="birthCri_main">
-      <div class="birth-container">
-        <div class="birthCri_main_inner_content">
-          <div class="birthCri_main_items_middle">
-            <!-- header area -->
-            <div class="birthCri_header-content">
-              <div class="birthCri-logo">
-                <img src="logo.png" alt="logo" />
-              </div>
-              <div class="birthCri-header-heading">
-                <h2>Birth Certificate</h2>
-              </div>
+const printContentHeader = (windowToPrint, data) => {
+  windowToPrint.document.write(`<body>
+  <div class="birthCri_main" id="birthCri_main">
+    <div class="birth-container">
+      <div class="birthCri_main_inner_content">
+        <div class="birthCri_main_items_middle">
+          <!-- header area -->
+          <div class="birthCri_header-content">
+            <div class="birthCri-logo">
+              <img src="/JS/assets/img/logo.png" alt="logo" />
             </div>
-            <!-- header area -->
-
-            <!-- table area -->
-            <div class="birthCri_table">
-              <table class="birthCri_main_table">
-                <thead></thead>
-                <tbody>
-                  <!-- single item -->
-                  <tr class="birthCri_new_row birthCri_one1">
-                    <td class="birthCri_half">
-                      <span>Newborn ID No.: </span>
-                    </td>
-                    <td class="birthCri_half">
-                      <span>SL No.:</span>
-                    </td>
-                  </tr>
-
-
-
-
-
-                  <!-- single item -->
-                  <tr class="birthCri_height"></tr>
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_half">
-                      <span>Name: </span>
-                    </td>
-                    <td class="birthCri_half">
-                      <span>Sex:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_half">
-                      <span>Date & Time of Birth: </span>
-                    </td>
-
-
-
-
-                    <td class="birthCri_half">
-                      <span>Mothers ID No:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_full">
-                      <span>Mother's Name:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_half">
-                      <span>Nationality: </span>
-                    </td>
-                    <td class="birthCri_half">
-                      <span>Religion:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-
-
-
-
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_full">
-                      <span>Father's Name:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_half">
-                      <span>Nationality: </span>
-                      <span>Bangladeshi</span>
-                    </td>
-                    <td class="birthCri_half">
-                      <span>Religion:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_full">
-                      <span>Present Address:</span>
-                    </td>
-                  </tr>
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_full">
-                      <span></span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_full">
-                      <span>Permanent Address:</span>
-                    </td>
-                  </tr>
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_full">
-                      <span></span>
-                    </td>
-                  </tr>
-
-
-
-
-                  <!-- single item -->
-                  <tr class="birthCri_height"></tr>
-                  <!-- single item -->
-                  <tr class="birthCri_new_row signature_row">
-                    <td class="birthCri_half birthCri_signature">
-                      <span>Certificate Issued By </span>
-                    </td>
-                    <td class="birthCri_half birthCri_signature">
-                      <span>Signature of the Authority:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-
-                  <!-- single item -->
-                  <tr class="birthCri_new_row">
-                    <td class="birthCri_half">
-                      <span>Date of Issue:</span>
-                    </td>
-                  </tr>
-                  <!-- single item -->
-                </tbody>
-              </table>
-            </div>
-
-
-			
-            <!-- table area -->
-            <div class="birthCri-table-footer">
-              <h3>Platinum Hospital Limited</h3>
-              <p>
-                69/M/1 GH Tower Panthapath, Kalabagan, Dhaka Bangladesh,
-                Phone:01000000000, Hotline:12345
-              </p>
+            <div class="birthCri-header-heading">
+              <h2>Birth Certificate</h2>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+          <!-- header area -->
+
+          <!-- table area -->
+          <div class="birthCri_table">
+            <table class="birthCri_main_table">
+              <thead></thead>
+              <tbody>
+                <!-- single item -->
+                <tr class="birthCri_new_row birthCri_one1">
+                  <td class="birthCri_half">
+                    <span>Newborn ID No.: ${data.bornIdNO} </span>
+                  </td>
+                  <td class="birthCri_half">
+                    <span>SL No.: ${data.slNo}</span>
+                  </td>
+                </tr>`);
+};
+const printBabyInfo = (windowToPrint, data) => {
+  windowToPrint.document.write(`
+  <!-- single item -->
+  <tr class="birthCri_height"></tr>
+  <!-- single item -->
+  <tr class="birthCri_new_row">
+    <td class="birthCri_half">
+      <span>Name: ${data.name} </span>
+    </td>
+    <td class="birthCri_half">
+      <span>Sex: ${data.gender}</span>
+    </td>
+  </tr>
+  <!-- single item -->
+  <!-- single item -->
+  <tr class="birthCri_new_row">
+    <td class="birthCri_half">
+      <span>Date & Time of Birth: ${data.birthInfo.date} &nbsp; ${data.birthInfo.time} </span>
+    </td>`);
+};
+
+const printMotherInfo = (windowToPrint, data) => {
+  windowToPrint.document.write(`
+  <td class="birthCri_half">
+  <span>Mothers ID No: ${data.motherIdNo}</span>
+</td>
+</tr>
+<!-- single item -->
+<!-- single item -->
+<tr class="birthCri_new_row">
+<td class="birthCri_full">
+  <span>Mother's Name: ${data.motherName}</span>
+</td>
+</tr>
+<!-- single item -->
+<!-- single item -->
+<tr class="birthCri_new_row">
+<td class="birthCri_half">
+  <span>Nationality: ${data.nationality} </span>
+</td>
+<td class="birthCri_half">
+  <span>Religion:${data.religion}</span>
+</td>
+</tr>
+<!-- single item -->`);
+};
+
+const printFatherInfo = (windowToPrint, data) => {
+  windowToPrint.document.write(`
+  <!-- single item -->
+                  <tr class="birthCri_new_row">
+                    <td class="birthCri_full">
+                      <span>Father's Name:${data.fatherName}</span>
+                    </td>
+                  </tr>
+                  <!-- single item -->
+                  <!-- single item -->
+                  <tr class="birthCri_new_row">
+                    <td class="birthCri_half">
+                      <span>Nationality:${data.nationality} </span>
+                    </td>
+                    <td class="birthCri_half">
+                      <span>Religion: ${data.religion}</span>
+                    </td>
+                  </tr>
+                  <!-- single item -->
+                  <!-- single item -->
+                  <tr class="birthCri_new_row">
+                    <td class="birthCri_full">
+                      <span>Present Address:${data.presentAddress}</span>
+                    </td>
+                  </tr>
+                  <tr class="birthCri_new_row">
+                    <td class="birthCri_full">
+                      <span></span>
+                    </td>
+                  </tr>
+                  <!-- single item -->
+                  <!-- single item -->
+                  <tr class="birthCri_new_row">
+                    <td class="birthCri_full">
+                      <span>Permanent Address:${data.permanentAddress}</span>
+                    </td>
+                  </tr>
+                  <tr class="birthCri_new_row">
+                    <td class="birthCri_full">
+                      <span></span>
+                    </td>
+                  </tr>`);
+};
+
+const printSignatureIssue = (windowToPrint, data) => {
+  windowToPrint.document.write(`
+  <!-- single item -->
+  <tr class="birthCri_height"></tr>
+  <!-- single item -->
+  <tr class="birthCri_new_row signature_row">
+    <td class="birthCri_half birthCri_signature">
+      <span>Certificate Issued By </span>
+    </td>
+    <td class="birthCri_half birthCri_signature">
+      <span>Signature of the Authority:</span>
+    </td>
+  </tr>
+  <!-- single item -->
+
+  <!-- single item -->
+  <tr class="birthCri_new_row">
+    <td class="birthCri_half">
+      <span>Date of Issue:${data.date}</span>
+    </td>
+  </tr>
+  <!-- single item -->
+</tbody>
+</table>
+</div>`);
+};
+
+const printFooterAddress = (windowToPrint, data) => {
+  windowToPrint.document.write(`
+  <!-- table area -->
+  <div class="birthCri-table-footer">
+    <h3>Platinum Hospital Limited</h3>
+    <p>
+     ${data.address},
+      Phone:${data.phone}, Hotline:${data.hotline}
+    </p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+  `);
+};

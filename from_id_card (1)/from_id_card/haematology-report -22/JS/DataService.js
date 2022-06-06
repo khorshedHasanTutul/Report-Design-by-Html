@@ -1,26 +1,33 @@
 const sensitivityData = {
   headerInformation: {
-    hospitalInfo: {
-      invoiceNo: "V123456789",
-      invoiceDate: "26/08/21",
-      delivaryDate: "27/08/21",
-      reportNo: "123456789",
-    },
-    ptInfo: {
-      ptName: "Baby of Urmi",
-      age: "12D",
-      gender: "M",
-      address: "pabna",
-      contact: "01704247162",
-    },
-    doctorInfo: {
-      name: "Prof Dr. Ishrat Jahan Lucky MBBS",
-      ptBedInfo: {
-        ward: "Cabin 719(A)",
-        bed: "Cabin 719(A)",
+    headerTopInfo: {
+      addressDto: {
+        address: "21 Shynoli Mirpur Road Dhaka Bangladesh",
+        phone: "+880114231",
+        hotline: "16217",
+      },
+      hospitalInfo: {
+        invoiceNo: "V123456789",
+        invoiceDate: "26/08/21",
+        delivaryDate: "27/08/21",
+        reportNo: "123456789",
+      },
+      ptInfo: {
+        ptName: "Baby of Urmi",
+        age: "12D",
+        gender: "M",
+        address: "pabna",
+        contact: "01704247162",
+      },
+      doctorInfo: {
+        name: "Prof Dr. Ishrat Jahan Lucky MBBS",
+        ptBedInfo: {
+          ward: "Cabin 719(A)",
+          bed: "Cabin 719(A)",
+        },
       },
     },
-    testInfo: {
+    headerBottomInfo: {
       testName: "Echo Cardiography",
       labNo: "A2103698745",
       bedNo: "Cabin",
@@ -44,8 +51,8 @@ const sensitivityData = {
   },
   barCode: {
     header: {
-      invoiceBarcode: "assets/img/barCode.png",
-      reportBarcode: "assets/img/barCode.png",
+      invoiceBarcode: "/JS/assets/img/barCode.png",
+      reportBarcode: "/JS/assets/img/barCode.png",
     },
     leftSide: {
       hnBarCode: "assets/img/barCode.png",
@@ -63,6 +70,18 @@ const sensitivityData = {
     },
     {
       name: "Ciprofloxacin",
+      sensitivity: "S",
+    },
+    {
+      name: "Ciprofloxacin",
+      sensitivity: "I",
+    },
+    {
+      name: "Ciprofloxacin",
+      sensitivity: "S",
+    },
+    {
+      name: "Ciprofloxacin",
       sensitivity: "I",
     },
     {
@@ -83,8 +102,18 @@ const sensitivityData = {
     },
     {
       name: "Ciprofloxacin",
+      sensitivity: "I",
+    },
+    {
+      name: "Ciprofloxacin",
       sensitivity: "S",
     },
+    {
+      name: "Ciprofloxacin",
+      sensitivity: "I",
+    }
+   
+    
   ],
   footerInfo: {
     prepared: {
@@ -104,7 +133,8 @@ const sensitivityData = {
       address: "21 Shamoly Mirpur Road Dhaka 1207 Bangladesh",
       email: "hello@gmail.com",
       hotline: "12365",
-      web: "www.hello.com",
+      phone: "0125255",
+      web:"hello.com"
     },
     printedInfo: {
       printBy: "Namim",

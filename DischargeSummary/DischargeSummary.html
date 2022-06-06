@@ -5,283 +5,446 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discharge Summary</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        list-style: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      h3 {
+        font-size: 0.9rem;
+      }
+      strong {
+        font-weight: 500;
+      }
+      body {
+        font-size: 0.9rem;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        padding: 25px 20px;
+      }
+
+      .d-flex {
+        display: flex;
+      }
+      .flex-d-c {
+        flex-direction: column;
+      }
+      .j-c-e {
+        justify-content: end;
+      }
+      .j-c-c {
+        justify-content: center;
+      }
+      .j-c-sa {
+        justify-content: space-around;
+      }
+      .j-c-sb {
+        justify-content: space-between;
+      }
+      .a-i-c {
+        align-items: center;
+      }
+      .barcode img {
+        width: 200px;
+        height: 28px;
+        object-fit: fill;
+      }
+      .header__logo img {
+        width: 200px;
+      }
+      .header-text {
+        border: 1px solid black;
+        padding: 5px;
+        width: 40%;
+        text-align: center;
+      }
+      .header-text h3 {
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+      .patient-details ul > li {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+      }
+      .header-patient-container {
+        border-bottom: 1px solid black;
+        padding: 6px 0;
+      }
+
+      ul > li > h3 {
+        border-bottom: 1px dashed black;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-top: 15px;
+      }
+      .Weight-container .container-itemm-list {
+        display: grid;
+        grid-template-columns: 200px auto;
+      }
+      .history-examination li:first-child ul > li {
+        margin-left: 25px;
+        list-style: disc;
+      }
+      .container-itemm-list p:first-child {
+        margin-top: 4px;
+      }
+      .prescription-img img {
+        width: 25px;
+      }
+      .medicin-list > li {
+        margin-left: 16px;
+        list-style: decimal;
+        margin-bottom: 5px;
+      }
+      .medicine-routine {
+        gap: 1rem;
+      }
+      .advice > li {
+        margin-left: 15px;
+        list-style: disc;
+      }
+      .signature-section-container {
+        margin-top: 50px;
+      }
+      .signature-section-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-wrap: anywhere;
+        gap: 2rem;
+      }
+      .signature-item .dashed {
+        border-bottom: 1px dashed black;
+      }
+      .footer-address-section {
+        margin-top: 20px;
+        border-top: 1px solid black;
+      }
+      .footer-address-info h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+      .address-info__all {
+        gap: 0.5rem;
+      }
+
+      #header {
+        display: table-header-group;
+      }
+
+      #main {
+        display: table-row-group;
+      }
+
+      #footer {
+        display: table-footer-group;
+      }
+    </style>
   </head>
+
   <body>
-    <header>
-      <div class="header-container">
-        <div class="header__logo d-flex j-c-e a-i-c">
-          <img src="assets/img/logo.png" alt="logo" srcset="" />
-        </div>
-        <div class="header__headline d-flex j-c-sb a-i-c">
-          <div class="barcode">
-            <img src="assets/img/barcode.png" alt="" srcset="" />
-          </div>
-          <div class="header-text">
-            <h3>Discharge Summary</h3>
-          </div>
-          <div class="barcode">
-            <img src="assets/img/barcode.png" alt="" srcset="" />
-          </div>
-        </div>
-        <div class="header-patient-container d-flex j-c-sb a-i-c">
-          <div class="patient-details">
-            <ul>
-              <li>
-                <strong>HN</strong>
-                <p>:H12345677</p>
-              </li>
-              <li>
-                <strong>Patient Name</strong>
-                <p>:Baby of Urmi</p>
-              </li>
-              <li>
-                <strong>Age/Gender</strong>
-                <p>:14D/Male</p>
-              </li>
-              <li>
-                <strong>Phone</strong>
-                <p>:01704247162</p>
-              </li>
-              <li>
-                <strong>Address</strong>
-                <p>:Deodoba, Aditmari , Lalmonirhat</p>
-              </li>
-              <li>
-                <strong>Primary Consultant</strong>
-                <p>:Prof. Dr. Shiren Afroz</p>
-              </li>
-            </ul>
-          </div>
-          <div class="patient-details">
-            <ul>
-              <li>
-                <strong>HN</strong>
-                <p>:H12345677</p>
-              </li>
-              <li>
-                <strong>Patient Name</strong>
-                <p>:Baby of Urmi</p>
-              </li>
-              <li>
-                <strong>Age/Gender</strong>
-                <p>:14D/Male</p>
-              </li>
-              <li>
-                <strong>Phone</strong>
-                <p>:01704247162</p>
-              </li>
-              <li>
-                <strong>Address</strong>
-                <p>:Deodoba, Aditmari , Lalmonirhat</p>
-              </li>
-              <li>
-                <strong>Primary Consultant</strong>
-                <p>:Prof. Dr. Shiren Afroz</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <ul>
-        <li>
-          <h3>Weight Status</h3>
-          <ul class="Weight-container">
-            <li>
-              <div class="container-itemm-list">
-                <p>Discharge Wt</p>
-                <p>:2.7kg</p>
+    <table>
+      <thead>
+        <header id="header">
+          <div class="header-container">
+            <div class="header__logo d-flex j-c-e a-i-c">
+              <img src="assets/img/logo.png" alt="logo" srcset="" />
+            </div>
+            <div class="header__headline d-flex j-c-sb a-i-c">
+              <div class="barcode">
+                <img src="assets/img/barcode.png" alt="" srcset="" />
               </div>
-              <div class="container-itemm-list">
-                <p>Discharge Wt</p>
-                <p>:2.7kg</p>
+              <div class="header-text">
+                <h3>Discharge Summary</h3>
               </div>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h3>diagnosis</h3>
-          <ul>
-            <li>
-              <div class="container-itemm-list">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui,
-                  quis.
-                </p>
+              <div class="barcode">
+                <img src="assets/img/barcode.png" alt="" srcset="" />
               </div>
-              <div class="container-itemm-list">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui,
-                  quis.
-                </p>
+            </div>
+
+            <div class="header-patient-container d-flex j-c-sb a-i-c">
+              <div class="patient-details">
+                <ul>
+                  <li>
+                    <strong>HN</strong>
+                    <p>:H12345677</p>
+                  </li>
+                  <li>
+                    <strong>Patient Name</strong>
+                    <p>:Baby of Urmi</p>
+                  </li>
+                  <li>
+                    <strong>Age/Gender</strong>
+                    <p>:14D/Male</p>
+                  </li>
+                  <li>
+                    <strong>Phone</strong>
+                    <p>:01704247162</p>
+                  </li>
+                  <li>
+                    <strong>Address</strong>
+                    <p>:Deodoba, Aditmari , Lalmonirhat</p>
+                  </li>
+                  <li>
+                    <strong>Primary Consultant</strong>
+                    <p>:Prof. Dr. Shiren Afroz</p>
+                  </li>
+                </ul>
               </div>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h3>History & Examination</h3>
-          <ul class="history-examination">
-            <li>
-              <p>
-                Baby of Urmi , Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. A, assumenda.
-              </p>
-              <ul>
-                <li>Fever For 2 days</li>
-                <li>Fever For 4 days</li>
-                <li>Fever For 6 days</li>
-              </ul>
-            </li>
-            <li>
-              <div class="container-itemm-list">
-                <p>
-                  <strong>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Necessitatibus eum rerum minus animi accusamus nisi magnam.
-                    Consequatur cupiditate amet possimus, ipsum doloremque enim
-                    distinctio voluptatibus. Eius aliquid quas inventore cumque
-                    ab quisquam voluptates odit nisi, molestiae voluptatum
-                    eveniet illum ipsam ratione est ipsa maiores voluptatibus
-                    nobis cupiditate iure libero, ex corrupti reiciendis!
-                    Dignissimos animi ad harum voluptates culpa et ipsa
-                    aspernatur quia. Expedita quis dolorum, non doloribus
-                    adipisci quae veniam amet pariatur eos reprehenderit illo
-                    mollitia debitis. Sapiente molestiae commodi laudantium unde
-                    illum reiciendis inventore optio tenetur, iure aperiam quas
-                    labore porro voluptas facere! Nulla maxime cupiditate
-                    dolorem eaque consequatur.
-                  </strong>
-                </p>
+              <div class="patient-details">
+                <ul>
+                  <li>
+                    <strong>HN</strong>
+                    <p>:H12345677</p>
+                  </li>
+                  <li>
+                    <strong>Patient Name</strong>
+                    <p>:Baby of Urmi</p>
+                  </li>
+                  <li>
+                    <strong>Age/Gender</strong>
+                    <p>:14D/Male</p>
+                  </li>
+                  <li>
+                    <strong>Phone</strong>
+                    <p>:01704247162</p>
+                  </li>
+                  <li>
+                    <strong>Address</strong>
+                    <p>:Deodoba, Aditmari , Lalmonirhat</p>
+                  </li>
+                  <li>
+                    <strong>Primary Consultant</strong>
+                    <p>:Prof. Dr. Shiren Afroz</p>
+                  </li>
+                </ul>
               </div>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h3>Hospital Course Management</h3>
-          <ul>
-            <li>
-              <div class="container-itemm-list">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Possimus, voluptates saepe molestias, delectus ad ducimus
-                  molestiae libero nesciunt reprehenderit consequatur minus
-                  alias sequi culpa deserunt officiis dicta quae. Ullam quia,
-                  blanditiis cupiditate eaque perferendis eveniet libero id
-                  autem nemo quisquam ad hic unde voluptatum inventore
-                  voluptatibus eius praesentium voluptates sit?
-                </p>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h3>treatment On Discharge</h3>
-          <div class="right-pres-container">
-            <div class="border-span"></div>
-            <div class="prescription__right-side">
-              <div class="prescription-img">
-                <img src="assets/img/prescription.png" alt="img" srcset="" />
-              </div>
-              <ul class="medicin-list">
-                <li>
-                  <div class="prescribed-medicine">
-                    <div class="medicine-name">
-                      <p>
-                        <strong> P/D Napa 15 MI P/D</strong>
-                        <span class="bottom-info__text"
-                          >(Paracetamol 80mg)</span
-                        >
-                      </p>
-                    </div>
-                    <div class="medicine-routine d-flex">
-                      <p>8 drops</p>
-                      <p>4-6 Hourly</p>
-                      <p>If Needed</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="prescribed-medicine">
-                    <div class="medicine-name">
-                      <p>
-                        <strong>P/D Napa 15 MI P/D</strong>
-                        <span class="bottom-info__text"
-                          >(Paracetamol 80mg)</span
-                        >
-                      </p>
-                    </div>
-                    <div class="medicine-routine d-flex">
-                      <p>8 drops</p>
-                      <p>4-6 Hourly</p>
-                      <p>If Needed</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
-        </li>
-        <li>
-          <h3>Advice</h3>
-          <ul class="advice">
-            <li>Take medication as prescribed</li>
-            <li>Take medication as prescribed</li>
-            <li>Take medication as prescribed</li>
-            <li>Take medication as prescribed</li>
-            <li>Take medication as prescribed</li>
+        </header>
+      </thead>
+
+      <tbody>
+        <main id="main">
+          <ul>
+            <li>
+              <h3>Weight Status</h3>
+              <ul class="Weight-container">
+                <li>
+                  <div class="container-itemm-list">
+                    <p>Discharge Wt</p>
+                    <p>:2.7kg</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-itemm-list">
+                    <p>Discharge Wt</p>
+                    <p>:2.7kg</p>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>diagnosis</h3>
+              <ul>
+                <li>
+                  <div class="container-itemm-list">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Qui, quis.
+                    </p>
+                  </div>
+                  <div class="container-itemm-list">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Qui, quis.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>History & Examination</h3>
+              <ul class="history-examination">
+                <li>
+                  <p>
+                    Baby of Urmi , Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. A, assumenda.
+                  </p>
+                  <ul>
+                    <li>Fever For 2 days</li>
+                    <li>Fever For 4 days</li>
+                    <li>Fever For 6 days</li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="container-itemm-list">
+                    <p>
+                      <strong>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Necessitatibus eum rerum minus animi accusamus nisi
+                        magnam. Consequatur cupiditate amet possimus, ipsum
+                        doloremque enim distinctio voluptatibus. Eius aliquid
+                        quas inventore cumque ab quisquam voluptates odit nisi,
+                        molestiae voluptatum eveniet illum ipsam ratione est
+                        ipsa maiores voluptatibus nobis cupiditate iure libero,
+                        ex corrupti reiciendis! Dignissimos animi ad harum
+                        voluptates culpa et ipsa aspernatur quia. Expedita quis
+                        dolorum, non doloribus adipisci quae veniam amet
+                        pariatur eos reprehenderit illo mollitia debitis.
+                        Sapiente molestiae commodi laudantium unde illum
+                        reiciendis inventore optio tenetur, iure aperiam quas
+                        labore porro voluptas facere! Nulla maxime cupiditate
+                        dolorem eaque consequatur.
+                      </strong>
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>Hospital Course Management</h3>
+              <ul>
+                <li>
+                  <div class="container-itemm-list">
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Possimus, voluptates saepe molestias, delectus ad ducimus
+                      molestiae libero nesciunt reprehenderit consequatur minus
+                      alias sequi culpa deserunt officiis dicta quae. Ullam
+                      quia, blanditiis cupiditate eaque perferendis eveniet
+                      libero id autem nemo quisquam ad hic unde voluptatum
+                      inventore voluptatibus eius praesentium voluptates sit?
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>treatment On Discharge</h3>
+              <div class="right-pres-container">
+                <div class="border-span"></div>
+                <div class="prescription__right-side">
+                  <div class="prescription-img">
+                    <img
+                      src="assets/img/prescription.png"
+                      alt="img"
+                      srcset=""
+                    />
+                  </div>
+                  <ul class="medicin-list">
+                    <li>
+                      <div class="prescribed-medicine">
+                        <div class="medicine-name">
+                          <p>
+                            <strong> P/D Napa 15 MI P/D</strong>
+                            <span class="bottom-info__text"
+                              >(Paracetamol 80mg)</span
+                            >
+                          </p>
+                        </div>
+                        <div class="medicine-routine d-flex">
+                          <p>8 drops</p>
+                          <p>4-6 Hourly</p>
+                          <p>If Needed</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prescribed-medicine">
+                        <div class="medicine-name">
+                          <p>
+                            <strong>P/D Napa 15 MI P/D</strong>
+                            <span class="bottom-info__text"
+                              >(Paracetamol 80mg)</span
+                            >
+                          </p>
+                        </div>
+                        <div class="medicine-routine d-flex">
+                          <p>8 drops</p>
+                          <p>4-6 Hourly</p>
+                          <p>If Needed</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <h3>Advice</h3>
+              <ul class="advice">
+                <li>Take medication as prescribed</li>
+                <li>Take medication as prescribed</li>
+                <li>Take medication as prescribed</li>
+                <li>Take medication as prescribed</li>
+                <li>Take medication as prescribed</li>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-    </main>
-    <footer>
-      <div class="signature-section-container">
-        <div class="signature-item">
-          <p class="dashed">Prepared by(electronic Signature)</p>
-          <div class="doctor-identity">
-            <p>Dr. nandola Jahan</p>
-            <p>Mbbs, Specialist, FCPS, MD, Professor,Frcp</p>
+
+
+
+
+
+          <div class="signature-section-container">
+            <div class="signature-item">
+              <p class="dashed">Prepared by(electronic Signature)</p>
+              <div class="doctor-identity">
+                <p>Dr. nandola Jahan</p>
+                <p>Mbbs, Specialist, FCPS, MD, Professor,Frcp</p>
+              </div>
+            </div>
+            <div class="signature-item">
+              <p class="dashed">Prepared by(electronic Signature)</p>
+              <div class="doctor-identity">
+                <p>Dr. nandola Jahan</p>
+                <p>Mbbs, Specialist, FCPS, MD, Professor,Frcp</p>
+              </div>
+            </div>
+            <div class="signature-item">
+              <p class="dashed">Prepared by(electronic Signature)</p>
+              <div class="doctor-identity">
+                <p>Dr. nandola Jahan</p>
+                <p>Mbbs, Specialist, FCPS, MD, Professor,Frcp</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="signature-item">
-          <p class="dashed">Prepared by(electronic Signature)</p>
-          <div class="doctor-identity">
-            <p>Dr. nandola Jahan</p>
-            <p>Mbbs, Specialist, FCPS, MD, Professor,Frcp</p>
-          </div>
-        </div>
-        <div class="signature-item">
-          <p class="dashed">Prepared by(electronic Signature)</p>
-          <div class="doctor-identity">
-            <p>Dr. nandola Jahan</p>
-            <p>Mbbs, Specialist, FCPS, MD, Professor,Frcp</p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-address-section ">
-          <div class="printing-container d-flex j-c-sb a-i-c">
-              <div class="printing-time d-flex ">
-                  <p>Printing date & Time</p>
-                  <p>28/08/2021</p>
-                  <p>11.22 PM</p>
+        </main>
+      </tbody>
+      <tfoot>
+      <footer id="footer">
+        <div class="footer">
+          <div class="footer-address-section">
+            <div class="printing-container d-flex j-c-sb a-i-c">
+              <div class="printing-time d-flex">
+                <p>Printing date & Time</p>
+                <p>28/08/2021</p>
+                <p>11.22 PM</p>
               </div>
               <div class="software-devloped-by d-flex">
-                  <p>SoftwareBy::</p>
-                  <p>Iqrasys Solutions Ltd</p>
+                <p>SoftwareBy::</p>
+                <p>Iqrasys Solutions Ltd</p>
               </div>
-          </div>
-        <div class="footer-address-info d-flex j-c-c a-i-c flex-d-c">
-            <h3>Bangladesh Specialaized Hospital Ltd</h3>
-            <div class="address-info__all d-flex j-c-c a-i-c">
+            </div>
+            <div class="footer-address-info d-flex j-c-c a-i-c flex-d-c">
+              <h3>Platinum Hospital Ltd</h3>
+              <div class="address-info__all d-flex j-c-c a-i-c">
                 <p>21 Shymoli</p>
                 <p>Mirpur Road</p>
                 <p>Hotline:0925132543541</p>
                 <p>Email:hello@gmail.com</p>
                 <p>Web:www.hello.com</p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    </footer>
+      </footer>
+    </tfoot>
+    </table>
   </body>
 </html>
