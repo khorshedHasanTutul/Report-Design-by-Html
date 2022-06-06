@@ -1,659 +1,734 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Death Certificate</title>
-	<!-- google fonts -->
-	 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,900&display=swap" rel="stylesheet" />
-	 <style>
-	 	*{
-	 		margin: 0;
-	 		padding: 0;
-	 	}
-	 	 body {
-                font-family: "Poppins", sans-serif;
-                box-sizing: border-box;
-            }
-            p,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                margin: 0;
-                padding: 0;
-            }
-            .deathCri-container {
-				max-width: 700px;
-				width: 100%;
-				margin: 0 auto;
-				box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-				padding: 20px 30px 30px 30px;
-			}
-			table {
-	width: 100%;
-	margin-bottom: 10px;
-	max-width: 100%;
-	background-color: transparent;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Death Certificate</title>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+      }
+      .deathCri-container {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px 30px 30px 30px;
+      }
+      table {
+        width: 100%;
+        margin-bottom: 10px;
+        max-width: 100%;
+        background-color: transparent;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
 
-.birthCri_main_inner_content {
-	padding: 20px 30px;
-}
+      .birthCri_main_inner_content {
+        padding: 20px 30px;
+      }
 
-.deathCri-header-heading {
-	text-align: center;
-	margin-bottom: 40px;
-	margin-top: 20px;
-}
+      .deathCri-header-heading {
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 20px;
+      }
 
-.deathCri-header-heading > h2 {
-	display: inline-block;
-	text-align: center;
-	font-weight: 400;
-	text-transform: uppercase;
-	font-size: 16px;
-	background: #EE6F24;
-	color: #fff;
-	padding: 2px 10px;
-}
+      .deathCri-header-heading > h2 {
+        display: inline-block;
+        text-align: center;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 16px;
+        background: #ee6f24;
+        color: #fff;
+        padding: 2px 10px;
+      }
 
-.issue-date-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
+      .issue-date-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .issue-date-left span {
+        background: #fff;
+        display: inline-block;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 12px;
+      }
+
+      .issue-date-left {
+        width: 40%;
+        position: relative;
+        z-index: 1;
+      }
+      .issue-date-right {
+        width: 28% !important;
+      }
+
+      .issue-date-left::after {
+        position: absolute;
+        width: 99%;
+        height: 100%;
+        background: transparent;
+        top: -8px;
+        left: 0;
+        content: "";
+        border-bottom: 1px dotted #000;
+        z-index: -1;
+      }
+
+      table,
+      table td {
+        padding: 0;
+        border: none;
+        border-collapse: collapse;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      .table-bordered > tbody > tr > td,
+      .table-bordered > tbody > tr > th,
+      .table-bordered > tfoot > tr > td,
+      .table-bordered > tfoot > tr > th,
+      .table-bordered > thead > tr > td,
+      .table-bordered > thead > tr > th {
+        border: 1px solid #000;
+      }
+
+      .patient_id_row > th,
+      td {
+        font-size: 12px;
+        text-align: left;
+        padding: 4px 8px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .patient_id_row .patient_id_wi {
+        width: 40%;
+      }
+      .table > tbody > tr > td,
+      .table > tbody > tr > th,
+      .table > tfoot > tr > td,
+      .table > tfoot > tr > th,
+      .table > thead > tr > td,
+      .table > thead > tr > th {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: middle;
+      }
+
+      .deathCri_new_row.deathCri_new_Address {
+        height: 80px;
+      }
+
+      .deathCri_half.deathCri_half_add {
+        vertical-align: top;
+      }
+
+      .patient_id_wi_cause {
+        width: 67%;
+      }
+
+      .patient_id_row.patient_id_row_case > th {
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .patient_id_row.patient_id_row_case th.patient_id_name {
+        text-align: left;
+      }
+
+      .deathCri_half.deathCri_half_condition {
+        width: 205px;
+      }
+
+      .deathCri_new_row.deathCri_new_row_con22
+        .deathCri_half.dottet_show_span
+        small {
+        display: block;
+      }
+
+      .deathCri_new_row.deathCri_new_row_con22 .deathCri_half.dottet_show_span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .deathCri_new_row.deathCri_new_row_con22
+        .deathCri_half.dottet_show_span::after {
+        position: absolute;
+        width: 92%;
+        height: 100%;
+        background: transparent;
+        top: -30px;
+        left: 9px;
+        content: "";
+        border-bottom: 1px dotted #000;
+        z-index: -1;
+      }
+
+      .deathCri_new_row.deathCri_new_row_con22
+        .deathCri_half.dottet_show_span
+        > span {
+        background: #fff;
+        display: inline-block;
+      }
+
+      .inner-case-22 {
+        position: relative;
+        z-index: 1;
+      }
+
+      .inner-case-22::after {
+        position: absolute;
+        width: 92%;
+        height: 100%;
+        background: transparent;
+        top: -22px;
+        left: 16px;
+        content: "";
+        border-bottom: 1px dotted #000;
+        z-index: -1;
+      }
+
+      .deathCri_half.dottet_show_span.dottet_show_span22 .inner-case-22 > h6 {
+        opacity: 0;
+      }
+
+      .deathCri_half.dottet_show_span.dottet_show_span22 .inner-case-22 > h5 {
+        opacity: 0;
+      }
+      .deathCri_half.dottet_show_span.dotted_after_hide::after {
+        display: none;
+      }
+
+      .deathCri_half.dottet_show_span.dottet_show_span_last22 > span {
+        opacity: 0;
+      }
+
+      .deathCri_half.dottet_show_span.dottet_show_span_last22 > small {
+        opacity: 0;
+      }
+
+      .deathCri-header-heading.deathCri-header-bottom22 {
+        margin-bottom: 10px;
+      }
+
+      .birthCri_half.birthCri_half_dead22 > small {
+        display: block;
+      }
+      .deat-sig-ldet > span {
+        font-size: 12px;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        background: #fff;
+      }
+
+      .death-footer-main {
+        display: flex;
+        justify-content: space-between;
+      }
+      .deat-sig-ldet {
+        width: 40%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .deat-sig-ldet::after {
+        position: absolute;
+        width: 65%;
+        height: 100%;
+        background: transparent;
+        top: -8px;
+        left: 85px;
+        content: "";
+        border-bottom: 1px solid #000;
+        z-index: -1;
+      }
+      .death-footer {
+        padding: 0px 20px;
+      }
+
+      .death-footer > span {
+        font-size: 12px;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        background: #fff;
+        margin-top: 36px;
+        display: block;
+      }
+      #birthCri_main {
+        margin: 20px 0px;
+      }
+
+      .jobCri21_header-content {
+        position: relative;
+        text-align: center;
+      }
+
+      .jobCri21_header-content::after {
+        position: absolute;
+        content: "";
+        width: 119%;
+        height: 1px;
+        background: #000;
+        left: -60px;
+        bottom: 0;
+      }
+
+      .jobCri21_logo > img {
+        width: 230px;
+        height: auto;
+        margin-top: -14px;
+      }
+
+      .jobCri21_content {
+        text-align: center;
+      }
+
+      .jobCri21_content > h1 {
+        color: #f7941d;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .jobCri21_content > h4 {
+        color: #17218b;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.1;
+        margin-bottom: 6px;
+      }
+
+      .jobCri21_content > p {
+        color: #000;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.1;
+        padding-bottom: 11px;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: -8px;
+      }
+    </style>
+  </head>
 
 
 
-.issue-date-left span {
-	background: #fff;
-	display: inline-block;
-	font-weight: 600;
-	text-transform: capitalize;
-	font-size: 12px;
-}
 
-.issue-date-left {
-	width: 40%;
-	position: relative;
-	z-index: 1;
-}
-.issue-date-right {
-	width: 28% !important;
-}
-
-.issue-date-left::after {
-	position: absolute;
-	width: 99%;
-	height: 100%;
-	background: transparent;
-	top: -8px;
-	left: 0;
-	content: "";
-	border-bottom: 1px dotted #000;
-	z-index: -1;
-}
+  <body>
+    <div class="deathCri_main" id="birthCri_main">
+      <div class="deathCri-container">
+        <div class="birthCri_main_inner_content">
+          <!-- header area -->
+          <div class="jobCri21_header-content">
+            <div class="jobCri21_logo">
+              <img src="logo.png" alt="job-logo" />
+            </div>
+            <div class="jobCri21_content">
+              <p>
+                69/M/1 GH Tower Panthapath, Kalabagan, Dhaka Bangladesh,
+                Phone:01000000000, Hotline:12345
+              </p>
+            </div>
+          </div>
 
 
-table, table td {
-  padding: 0;
-  border: none;
-  border-collapse: collapse;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
-	border: 1px solid #000;
-}
-
-.patient_id_row > th,td {
-	font-size: 12px;
-	text-align: left;
-	padding: 4px 8px;
-	font-weight: 500;
-	font-family: "Poppins", sans-serif;
-}
-
-.patient_id_row .patient_id_wi {
-	width: 40%;
-}
-.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-	padding: 8px;
-	line-height: 1.42857143;
-	vertical-align: middle;
-	
-}
-
-.deathCri_new_row.deathCri_new_Address {
-	height: 80px;
-}
-
-.deathCri_half.deathCri_half_add {
-	vertical-align: top;
-}
-
-.patient_id_wi_cause {
-	width: 67%;
-}
-	
-.patient_id_row.patient_id_row_case > th {
-	font-weight: 600;
-	text-align: center;
-}
-
-.patient_id_row.patient_id_row_case th.patient_id_name {
-	text-align: left;
-}
-
-.deathCri_half.deathCri_half_condition {
-	width: 205px;
-}
-
-.deathCri_new_row.deathCri_new_row_con22 .deathCri_half.dottet_show_span small {
-	display: block;
-}
-
-.deathCri_new_row.deathCri_new_row_con22 .deathCri_half.dottet_show_span {
-	position: relative;
-	z-index: 1;
-}
-
-.deathCri_new_row.deathCri_new_row_con22 .deathCri_half.dottet_show_span::after {
-	position: absolute;
-	width: 92%;
-	height: 100%;
-	background: transparent;
-	top: -30px;
-	left: 9px;
-	content: "";
-	border-bottom: 1px dotted #000;
-	z-index: -1;
-}
-
-.deathCri_new_row.deathCri_new_row_con22 .deathCri_half.dottet_show_span > span {
-	background: #fff;
-	display: inline-block;
-}
 
 
-.inner-case-22 {
-	position: relative;
-	z-index: 1;
-}
+          <!-- header area -->
+          <!-- header area -->
+          <div class="birthCri_header-content">
+            <div class="deathCri-header-heading">
+              <h2>Medical Certification of death</h2>
+            </div>
+          </div>
+          <!-- header area -->
+          <!-- issue date -->
+          <div class="issue-date-flex">
+            <div class="issue-date-left">
+              <span>Date Of Issue:</span>
+            </div>
+            <div class="issue-date-left issue-date-right">
+              <span>SL No:</span>
+            </div>
+          </div>
+          <!-- issue date -->
+          <!-- table area -->
 
-.inner-case-22::after {
-	position: absolute;
-	width: 92%;
-	height: 100%;
-	background: transparent;
-	top: -22px;
-	left: 16px;
-	content: "";
-	border-bottom: 1px dotted #000;
-	z-index: -1;
-}
 
-.deathCri_half.dottet_show_span.dottet_show_span22 .inner-case-22 > h6 {
-	opacity: 0;
-}
 
-.deathCri_half.dottet_show_span.dottet_show_span22 .inner-case-22 > h5 {
-	opacity: 0;
-}
-.deathCri_half.dottet_show_span.dotted_after_hide::after {
-	display: none;
-}
+          <div class="deathCri_table">
+            <table class="deathCri_main_table table-bordered table">
+              <thead>
+                <tr class="patient_id_row">
+                  <th colspan="4" class="patient_id_wi">Patient ID:</th>
+                  <th colspan="4" class="patient_id_name">Name:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="2" class="deathCri_half">
+                    <span>Sex: </span>
+                  </td>
+                  <td colspan="2" class="deathCri_half">
+                    <span>Age:</span>
+                  </td>
+                  <td colspan="2" class="deathCri_half">
+                    <span>Nationality: </span>
+                  </td>
+                  <td colspan="2" class="deathCri_half">
+                    <span>Religion:</span>
+                  </td>
+                </tr>
+                <!-- single item -->
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="4" class="deathCri_half">
+                    <span>Date/Time of Admission: </span>
+                  </td>
+                  <td colspan="2" class="deathCri_half">
+                    <span>Ward/Cabin/Unit:</span>
+                  </td>
+                  <td colspan="2" class="deathCri_half">
+                    <span>Bed: </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="8" class="deathCri_half">
+                    <span>Admitted Under: (Dr.) </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+              </tbody>
+            </table>
+          </div>
 
-.deathCri_half.dottet_show_span.dottet_show_span_last22 > span {
-	opacity: 0;
-}
 
-.deathCri_half.dottet_show_span.dottet_show_span_last22 > small {
-	opacity: 0;
-}
 
-.deathCri-header-heading.deathCri-header-bottom22 {
-	margin-bottom: 10px;
-}
 
-.birthCri_half.birthCri_half_dead22 > small {
-	display: block;
-}
-.deat-sig-ldet > span {
-	font-size: 12px;
-	text-align: left;
-	font-weight: 500;
-	font-family: "Poppins", sans-serif;
-	background: #fff;
-}
 
-.death-footer-main {
-	display: flex;
-	justify-content: space-between;
-}
-.deat-sig-ldet {
-	width: 40%;
-	position: relative;
-	z-index: 1;
-}
+          <!-- table area -->
 
-.deat-sig-ldet::after {
-	position: absolute;
-	width: 65%;
-	height: 100%;
-	background: transparent;
-	top: -8px;
-	left: 85px;
-	content: "";
-	border-bottom: 1px solid #000;
-	z-index: -1;
-}
-.death-footer {
-	padding: 0px 20px;
-}
+          <!-- table area -->
+          <div class="deathCri_table">
+            <table class="deathCri_main_table table-bordered table">
+              <thead></thead>
+              <tbody>
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="8" class="birthCri_half">
+                    <span>Father/ Spouse / Guardian (Please Tick): </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+                <!-- single item -->
+                <tr class="deathCri_new_row deathCri_new_Address">
+                  <td colspan="8" class="deathCri_half deathCri_half_add">
+                    <span>Address: </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="3" class="deathCri_half">
+                    <span>Tel(Res): </span>
+                  </td>
+                  <td colspan="3" class="deathCri_half">
+                    <span>(Office): </span>
+                  </td>
+                  <td colspan="3" class="deathCri_half">
+                    <span>Mobile: </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+              </tbody>
+            </table>
+          </div>
 
-.death-footer > span {
-	font-size: 12px;
-	text-align: left;
-	font-weight: 500;
-	font-family: "Poppins", sans-serif;
-	background: #fff;
-	margin-top: 36px;
-	display: block;
-}
-#birthCri_main {
-	margin: 20px 0px;
-}
 
-.jobCri21_header-content {
-	position: relative;
-	text-align: center;
-}
 
-.jobCri21_header-content::after {
-	position: absolute;
-	content: "";
-	width: 119%;
-	height: 1px;
-	background: #000;
-	left: -60px;
-	bottom: 0;
-}
+          <!-- table area -->
 
-.jobCri21_logo > img {
-	width: 230px;
-	height: auto;
-	margin-top: -14px;
-}
+          <!-- table area -->
+          <div class="deathCri_table">
+            <table class="deathCri_main_table table-bordered table">
+              <thead>
+                <tr class="patient_id_row patient_id_row_case">
+                  <th colspan="4" class="patient_id_wi_cause">
+                    Cause Of Death
+                  </th>
+                  <th colspan="4" class="patient_id_name">
+                    Approx,interval between onset and death
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- single item -->
+                <tr class="deathCri_new_row deathCri_new_row_con22">
+                  <td colspan="2" class="deathCri_half deathCri_half_condition">
+                    <span
+                      >1: Disease or conditions directly leading to death*
+                    </span>
+                  </td>
+                  <td colspan="2" class="deathCri_half dottet_show_span">
+                    <!-- <span>(a)</span> -->
+                    <small>Due to or as a consequence of</small>
+                  </td>
+                  <td colspan="2" class="deathCri_half dottet_show_span">
+                    <span></span>
+                  </td>
+                </tr>
+                <!-- single item -->
 
-.jobCri21_content {
-	text-align: center;
-}
+                <!-- single item -->
+                <tr class="deathCri_new_row deathCri_new_row_con22">
+                  <td colspan="2" class="deathCri_half deathCri_half_condition">
+                    <span
+                      >Antecedent causes Mote! condthons. it any. giving rise to
+                      toe atove Cannes slating the underlying concinton last
+                    </span>
+                  </td>
+                  <td
+                    colspan="2"
+                    class="deathCri_half dottet_show_span dotted_after_hide"
+                  >
+                    <div class="inner-case-22">
+                      <span>(b)</span>
+                      <small>Due to or as a consequence of</small>
+                    </div>
+                    <div class="inner-case-22">
+                      <span>(c)</span>
+                      <small>Due to or as a consequence of</small>
+                    </div>
+                    <div class="inner-case-22">
+                      <span>(d)</span>
+                      <small>Due to or as a consequence of</small>
+                    </div>
+                  </td>
+                  <td
+                    colspan="2"
+                    class="deathCri_half dottet_show_span dottet_show_span22 dotted_after_hide"
+                  >
+                    <div class="inner-case-22">
+                      <h6>a</h6>
+                      <h5>Due to or as a consequence of</h5>
+                    </div>
+                    <div class="inner-case-22">
+                      <h6>a</h6>
+                      <h5>Due to or as a consequence of</h5>
+                    </div>
+                    <div class="inner-case-22">
+                      <h6>a</h6>
+                      <h5>Due to or as a consequence of</h5>
+                    </div>
+                  </td>
+                </tr>
+                <!-- single item -->
 
-.jobCri21_content > h1 {
-	color: #F7941D;
-	font-size: 28px;
-	font-weight: 700;
-	line-height: 1;
-}
-.jobCri21_content > h4 {
-	color: #17218B;
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 1.1;
-	margin-bottom: 6px;
-}
+                <!-- single item -->
+                <tr class="deathCri_new_row deathCri_new_row_con22">
+                  <td colspan="2" class="deathCri_half deathCri_half_condition">
+                    <span
+                      >2: Other signifcant conditions contrbuting to death, but
+                      not related to diseases of conditions causing it.</span
+                    >
+                  </td>
+                  <td
+                    colspan="2"
+                    class="deathCri_half dottet_show_span dottet_show_span_last22"
+                  >
+                    <span>(a)</span>
+                    <small>Due to or as a consequence of</small>
+                  </td>
+                  <td colspan="2">
+                    <span></span>
+                  </td>
+                </tr>
+                <!-- single item -->
 
-.jobCri21_content > p {
-	color: #000;
-	font-weight: 400;
-	font-family: "Poppins", sans-serif;
-	font-size: 14px;
-	line-height: 1.1;
-	padding-bottom: 11px;
-	width: 80%;
-	margin: 0 auto;
-	margin-top: -8px;
-}
+                <!-- single item -->
+                <tr class="patient_id_row patient_id_row_case">
+                  <td colspan="4" class="patient_id_wi_cause">
+                    'This does not mean the mode of dying. E.g. heart failure.
+                    respiratory failure, injury or complications that caused
+                    death
+                  </td>
+                  <td colspan="4" class="patient_id_name"></td>
+                </tr>
+                <!-- single item -->
+              </tbody>
+            </table>
+          </div>
 
-	 </style>
-</head>
-<body>
-	<div class="deathCri_main" id="birthCri_main">
-		<div class="deathCri-container">
-			<div class="birthCri_main_inner_content">
-				<!-- header area -->
-					<div class="jobCri21_header-content">
-						<div class="jobCri21_logo">
-							<img src="logo.png" alt="job-logo">
-						</div>
-						<div class="jobCri21_content">
-							<p>69/M/1 GH Tower Panthapath, Kalabagan, Dhaka Bangladesh, Phone:01000000000, Hotline:12345</p>
-						</div>
-					</div>
-					<!-- header area -->
-					<!-- header area -->
-					<div class="birthCri_header-content">
-						<div class="deathCri-header-heading">
-							<h2>Medical Certification of death</h2>
-						</div>
-					</div>
-					<!-- header area -->
-					<!-- issue date -->
-					<div class="issue-date-flex">
-						<div class="issue-date-left">
-							<span>Date Of Issue:</span>
-						</div>
-						<div class="issue-date-left issue-date-right">
-							<span>SL No:</span>
-						</div>
-					</div>
-					<!-- issue date -->
-					<!-- table area -->
-					<div class="deathCri_table">
-						<table class="deathCri_main_table table-bordered table">
-							 <thead>
-							 	<tr class="patient_id_row">
-							 		<th colspan="4" class="patient_id_wi">Patient ID:</th>
-							 		<th colspan="4" class="patient_id_name">Name:</th>
-							 	</tr>
-							 </thead>
-							 <tbody>
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="2" class="deathCri_half">
-							 			<span>Sex:  </span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half">
-							 			<span>Age:</span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half">
-							 			<span>Nationality:  </span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half">
-							 			<span>Religion:</span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="4" class="deathCri_half">
-							 			<span>Date/Time of Admission:  </span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half">
-							 			<span>Ward/Cabin/Unit:</span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half">
-							 			<span>Bed:  </span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="8" class="deathCri_half">
-							 			<span>Admitted Under: (Dr.)  </span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
-							 	
-							 </tbody>
-						</table>
-					</div>
-					<!-- table area -->
 
-					<!-- table area -->
-					<div class="deathCri_table">
-						<table class="deathCri_main_table table-bordered table">
-							 <thead>
-							 </thead>
-							 <tbody>
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="8" class="birthCri_half">
-							 			<span>Father/ Spouse / Guardian (Please Tick):  </span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
-							 	<!-- single item -->
-							 	<tr  class="deathCri_new_row deathCri_new_Address">
-							 		<td colspan="8" class="deathCri_half deathCri_half_add">
-							 			<span>Address:  </span>
-							 		</td>
-							 		
-							 	</tr>
-							 	<!-- single item -->
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="3" class="deathCri_half">
-							 			<span>Tel(Res):  </span>
-							 		</td>
-							 		<td colspan="3" class="deathCri_half">
-							 			<span>(Office):  </span>
-							 		</td>
-							 		<td colspan="3" class="deathCri_half">
-							 			<span>Mobile:  </span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
-							 	
-							 </tbody>
-						</table>
-					</div>
-					<!-- table area -->
 
-					<!-- table area -->
-					<div class="deathCri_table">
-						<table class="deathCri_main_table table-bordered table">
-							 <thead>
-							 	<tr class="patient_id_row patient_id_row_case">
-							 		<th colspan="4" class="patient_id_wi_cause">Cause Of Death</th>
-							 		<th colspan="4" class="patient_id_name">Approx,interval between onset and death</th>
-							 	</tr>
-							 </thead>
-							 <tbody>
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row deathCri_new_row_con22">
-							 		<td colspan="2" class="deathCri_half deathCri_half_condition">
-							 			<span>1: Disease or conditions directly leading to death*  </span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half dottet_show_span">
-							 			<span>(a)</span>
-							 			<small>Due to or as a consequence of</small>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half dottet_show_span">
-							 			<span></span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
 
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row deathCri_new_row_con22">
-							 		<td colspan="2" class="deathCri_half deathCri_half_condition">
-							 			<span>Antecedent causes Mote! condthons. it any. giving rise to toe atove Cannes slating the underlying concinton last   </span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half dottet_show_span dotted_after_hide">
-							 			<div class="inner-case-22">
-							 				<span>(b)</span>
-							 			    <small>Due to or as a consequence of</small>
-							 			</div>
-							 			<div class="inner-case-22">
-							 				<span>(c)</span>
-							 			    <small>Due to or as a consequence of</small>
-							 			</div>
-							 			<div class="inner-case-22">
-							 				<span>(d)</span>
-							 			    <small>Due to or as a consequence of</small>
-							 			</div>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half dottet_show_span dottet_show_span22 dotted_after_hide">
-							 			<div class="inner-case-22">
-							 				<h6>a</h6>
-							 				<h5>Due to or as a consequence of</h5>
-							 			</div>
-							 			<div class="inner-case-22">
-							 				<h6>a</h6>
-							 				<h5>Due to or as a consequence of</h5>
-							 			</div>
-							 			<div class="inner-case-22">
-							 				<h6>a</h6>
-							 				<h5>Due to or as a consequence of</h5>
-							 			</div>
-							 			
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
 
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row deathCri_new_row_con22">
-							 		<td colspan="2" class="deathCri_half deathCri_half_condition">
-							 			<span>2: Other signifcant conditions contrbuting to death, but not related to diseases of conditions causing it.</span>
-							 		</td>
-							 		<td colspan="2" class="deathCri_half dottet_show_span dottet_show_span_last22">
-							 			<span>(a)</span>
-							 			<small>Due to or as a consequence of</small>
-							 		</td>
-							 		<td colspan="2">
-							 			<span></span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->
 
-							 	<!-- single item -->
-							 	<tr class="patient_id_row patient_id_row_case">
-							 		<td colspan="4" class="patient_id_wi_cause">'This does not mean the mode of dying. E.g. heart failure. respiratory failure, injury or complications that caused death </td>
-							 		<td colspan="4" class="patient_id_name"></td>
-							 	</tr>
-							 	<!-- single item -->
-	
-							 </tbody>
-						</table>
-					</div>
-					<!-- table area -->
+          <!-- table area -->
 
-					<!-- table area -->
-					<div class="deathCri_table">
-						<table class="deathCri_main_table table-bordered table">
-							 <thead>
-							 	<tr class="patient_id_row">
-							 		<th colspan="4" class="patient_id_wi_dath">Date of Death:</th>
-							 		<th colspan="4" class="patient_id_name">Time of Death:</th>
-							 	</tr>
-							 </thead>
-							 <tbody>
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="4" class="birthCri_half">
-							 			<span>certifying Doctor / Register:  </span>
-							 		</td>
-							 		<td colspan="4" class="birthCri_half">
-							 			<span>Signature:  </span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->						 	
-							 </tbody>
-						</table>
-					</div>
-					<!-- table area -->
-					<!-- header area -->
-					<div class="birthCri_header-content">
-						<div class="deathCri-header-heading deathCri-header-bottom22">
-							<h2>Dead Body Handover Information</h2>
-						</div>
-					</div>
-					<!-- header area -->
-					<!-- table area -->
-					<div class="deathCri_table">
-						<table class="deathCri_main_table table-bordered table">
-							 <thead>
-							 	<tr class="patient_id_row">
-							 		<th colspan="4" class="patient_id_wi_dath">Dead Body Taken by:</th>
-							 		<th colspan="4" class="patient_id_name">Signature:</th>
-							 	</tr>
-							 </thead>
-							 <tbody>
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="4" class="birthCri_half">
-							 			<span>Date & Time:  </span>
-							 		</td>
-							 		<td colspan="4" class="birthCri_half">
-							 			<span>Relation With Patient:  </span>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->	
-							 	<!-- single item -->
-							 	<tr class="deathCri_new_row">
-							 		<td colspan="4" class="birthCri_half">
-							 			<span>Name of Witness:  </span>
-							 		</td>
-							 		<td colspan="4" class="birthCri_half birthCri_half_dead22">
-							 			<span>Signature:  </span>
-							 			<small>Date:</small>
-							 		</td>
-							 	</tr>
-							 	<!-- single item -->					 	
-							 </tbody>
-						</table>
-					</div>
-					<!-- table area -->
-					<!-- header area -->
-					<div class="birthCri_header-content">
-						<div class="deathCri-header-heading deathCri-header-bottom22">
-							<h2>Code Seal</h2>
-						</div>
-					</div>
-					<!-- header area -->
+          <!-- table area -->
+          <div class="deathCri_table">
+            <table class="deathCri_main_table table-bordered table">
+              <thead>
+                <tr class="patient_id_row">
+                  <th colspan="4" class="patient_id_wi_dath">Date of Death:</th>
+                  <th colspan="4" class="patient_id_name">Time of Death:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="4" class="birthCri_half">
+                    <span>certifying Doctor / Register: </span>
+                  </td>
+                  <td colspan="4" class="birthCri_half">
+                    <span>Signature: </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+              </tbody>
+            </table>
+          </div>
 
-					<!-- footer area -->
-					<div class="death-footer">
-						<!-- single item -->
-						<div class="death-footer-main">
-							<div class="deat-sig-ldet">
-								<span>Capter No.</span>
-							</div>
-							<div class="deat-sig-ldet deat-sig-ldet2">
-								<span>4-digit Code.</span>
-							</div>
-						</div>
-						<!-- single item -->
-						<div class="death-footer-main">
-							<div class="deat-sig-ldet">
-								<span>Block No:</span>
-							</div>
-							<div class="deat-sig-ldet deat-sig-ldet2">
-								<span>(Name)</span>
-							</div>
-						</div>
-						<!-- single item -->
-						<div class="death-footer-main">
-							<div class="deat-sig-ldet">
-								<span>3-digit Code:</span>
-							</div>
-							<div class="deat-sig-ldet deat-sig-ldet2">
-								<span>Name of the doctor</span>
-							</div>
-						</div>
-						<!-- single item -->
-						<div class="death-footer-main">
-							<div class="deat-sig-ldet">
-								<span>(Name)</span>
-							</div>
-						</div>
-						<!-- single item -->
-						<span>UHL-167</span>
-					</div>
-					<!-- footer area -->
 
-			</div>
-		</div>
-	</div>
-</body>
+
+
+
+
+          <!-- table area -->
+          <!-- header area -->
+          <div class="birthCri_header-content">
+            <div class="deathCri-header-heading deathCri-header-bottom22">
+              <h2>Dead Body Handover Information</h2>
+            </div>
+          </div>
+          <!-- header area -->
+          <!-- table area -->
+          <div class="deathCri_table">
+            <table class="deathCri_main_table table-bordered table">
+              <thead>
+                <tr class="patient_id_row">
+                  <th colspan="4" class="patient_id_wi_dath">
+                    Dead Body Taken by:
+                  </th>
+                  <th colspan="4" class="patient_id_name">Signature:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="4" class="birthCri_half">
+                    <span>Date & Time: </span>
+                  </td>
+                  <td colspan="4" class="birthCri_half">
+                    <span>Relation With Patient: </span>
+                  </td>
+                </tr>
+                <!-- single item -->
+                <!-- single item -->
+                <tr class="deathCri_new_row">
+                  <td colspan="4" class="birthCri_half">
+                    <span>Name of Witness: </span>
+                  </td>
+                  <td colspan="4" class="birthCri_half birthCri_half_dead22">
+                    <span>Signature: </span>
+                    <small>Date:</small>
+                  </td>
+                </tr>
+                <!-- single item -->
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+
+
+		  
+          <!-- table area -->
+          <!-- header area -->
+          <div class="birthCri_header-content">
+            <div class="deathCri-header-heading deathCri-header-bottom22">
+              <h2>Code Seal</h2>
+            </div>
+          </div>
+          <!-- header area -->
+
+          <!-- footer area -->
+          <div class="death-footer">
+            <!-- single item -->
+            <div class="death-footer-main">
+              <div class="deat-sig-ldet">
+                <span>Capter No.</span>
+              </div>
+              <div class="deat-sig-ldet deat-sig-ldet2">
+                <span>4-digit Code.</span>
+              </div>
+            </div>
+            <!-- single item -->
+            <div class="death-footer-main">
+              <div class="deat-sig-ldet">
+                <span>Block No:</span>
+              </div>
+              <div class="deat-sig-ldet deat-sig-ldet2">
+                <span>(Name)</span>
+              </div>
+            </div>
+            <!-- single item -->
+            <div class="death-footer-main">
+              <div class="deat-sig-ldet">
+                <span>3-digit Code:</span>
+              </div>
+              <div class="deat-sig-ldet deat-sig-ldet2">
+                <span>Name of the doctor</span>
+              </div>
+            </div>
+            <!-- single item -->
+            <div class="death-footer-main">
+              <div class="deat-sig-ldet">
+                <span>(Name)</span>
+              </div>
+            </div>
+            <!-- single item -->
+            <span>UHL-167</span>
+          </div>
+          <!-- footer area -->
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -17,7 +17,10 @@ body {
   font-size: 0.9rem;
   box-sizing: border-box;
   text-transform: capitalize;
+  padding: 25px 20px;
+  margin: 0 auto;
 }
+
 .d-flex {
   display: flex;
 }
@@ -59,7 +62,7 @@ body {
 }
 .patient-details ul > li {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
 }
 .header-patient-container {
   border-bottom: 1px solid black;
@@ -121,3 +124,4 @@ ul > li > h3 {
 .address-info__all {
   gap: 0.5rem;
 }
+

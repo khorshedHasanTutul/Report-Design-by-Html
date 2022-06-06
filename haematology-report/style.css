@@ -189,6 +189,9 @@ table {
   text-align: right;
 }
 /* RESULT ENDS*/
+.page.page-22 {
+	position: relative;
+}
 
 /* POWERED STARTS */
 .power {
@@ -196,8 +199,8 @@ table {
 	transform: rotate(-90deg);
 	display: flex;
 	gap: 80px;
-	bottom: 0;
 	left: -245px;
+	top: 50%;
 }
 .power__bar-code{
   width: 120px;

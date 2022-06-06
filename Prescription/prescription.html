@@ -5,8 +5,198 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prescription</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+      body {
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        margin: 0 auto;
+        line-height: 1.4;
+        padding: 10px 0;
+      }
+      ul > li {
+        /* margin-left: 20px; */
+        font-size: 0.8rem;
+        list-style: disc;
+      }
+      .my-list > li ul > li {
+        margin-left: 20px;
+      }
+      .prescription__right-side {
+        margin-left: 20px;
+      }
+      .information-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .bottom-info ul > li {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+      }
+      .prescription-img img {
+        width: 7%;
+        position: relative;
+        bottom: 35px;
+        right: 25px;
+      }
+      .bottom-signature-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        border-bottom: 2px solid black;
+      }
+      .bottom-signature-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        border-bottom: 2px solid black;
+        font-weight: 600;
+      }
+      .prescription-img {
+        position: absolute;
+      }
+      .information-container .doctor-profile ul > li {
+        font-weight: 500;
+        padding: 2px 0;
+        list-style: none;
+        margin: 0;
+      }
+      .information-container .hospital-logo img {
+        width: 100%;
+        max-width: 220px;
+      }
+      .barcode {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 0;
+      }
+
+      .barcode .barcode-img img {
+        width: 180px;
+        max-height: 24px;
+        object-fit: fill;
+      }
+      .bottom-info-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid black;
+      }
+      .bottom-info-container .bottom-info ul > li {
+        padding: 1px 0px;
+        font-weight: 600;
+        list-style: none;
+        margin: 0;
+      }
+      .footer-info ul > li {
+        list-style: none;
+        margin: 0;
+      }
+      /* .prescription__left-side ul {
+  list-style: none;
+} */
+      .bottom-info-container .bottom-info .bottom-info__text {
+        font-weight: 400;
+        margin-left: 5px;
+      }
+      .bottom-left-info-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 8rem;
+      }
+      .bottom-info-right-side ul > li p:first-child {
+        font-weight: 600;
+      }
+      .age-info {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+      }
+      .bottom-info-right-side ul > li {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+      }
+
+      .prescription-body-container {
+        margin-top: 45px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .border-span {
+        border-left: 2px solid black;
+        min-height: 570px;
+        max-height: 620px;
+      }
+      .right-pres-container {
+        /* position: relative; */
+        display: flex;
+      }
+
+      .signature-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        /* border-bottom: 2px solid black; */
+        margin-top: 30px;
+      }
+      ul.my-list > li {
+        list-style: none;
+      }
+      .medicine-routine {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .footer-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .footer-info ul > li {
+        list-style: none;
+        font-weight: 600;
+      }
+      .bottom-info__text {
+        font-weight: 400;
+      }
+      .prescribed-medicine .medicine-name {
+        font-weight: 600;
+      }
+      .footer-area-address {
+        display: flex;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+      }
+    </style>
   </head>
+
+
+
+
+
   <body>
     <table>
       <thead>
@@ -25,6 +215,12 @@
               <img src="assets/img/logo.png" alt="img" />
             </div>
           </div>
+
+
+
+
+
+
           <div class="barcode">
             <div class="barcode-img">
               <img src="assets/img/barcode.png" alt="" />
@@ -33,6 +229,10 @@
               <img src="assets/img/barcode.png" alt="" />
             </div>
           </div>
+
+
+
+
           <div class="bottom-info-container">
             <div class="bottom-info">
               <ul>
@@ -83,6 +283,11 @@
           </div>
         </header>
       </thead>
+
+
+
+
+
       <tbody>
         <main>
           <div class="prescription-body-container">
@@ -100,7 +305,7 @@
                     <ul>
                       <h4>Pediatric History</h4>
                       <li>
-                        History of Past Illness :
+                        <h4 style="display: inline;">History of Past Illness</h4> :
                         <span> Needed NICCU Care </span>
                       </li>
                       <li>Weight: <span>5kg</span></li>
@@ -148,11 +353,18 @@
                 </li>
               </ul>
             </div>
+
+
+
+
+
+
+
             <div class="right-pres-container">
               <div class="border-span"></div>
               <div class="prescription__right-side">
                 <div class="prescription-img">
-                  <img src="assets/img/prescription.png" alt="img" srcset="" />
+                  <img src="/JS/assets/img/prescription2.png" alt="img" srcset="" />
                 </div>
                 <div class="pres-items">
                   <ul>
@@ -197,6 +409,11 @@
           </div>
         </main>
       </tbody>
+
+
+
+
+
       <tfoot>
         <footer>
           <div class="footer-container">

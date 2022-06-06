@@ -1,66 +1,136 @@
-const pathologyData = {
+const prescriptionData = {
   AddressDTO: {
     address: "21 Shymoli Mirpur Road , Dhaka 1207 Bangladesh",
     phone: "09666700100",
     hotline: "10633",
   },
-  HospitalInfo: {
-    barCode: "/Js/assets/img/barcode.png",
-    hnNo: "H123456789",
-    //Appoinment No
-    // billNo: "12108643654",
-    //Application Serial
-    billSl: "365",
-    //Bill number
-    billNo: "O13213578653",
-    //Get printed time
-    date: new Date().getDate(),
-    time: "12.08 PM",
-    //Paid options
-    // text: "customer copy",
-    // //?Text have possibility Duplicate copy also
+  doctorInfo: {
+    name: "Prof. Dr. Ishrat Jahan Lucky",
+    degree: ["MBBS", "FCPS", "MD"],
+    specialist: "NeoNatal and Child Specialist",
+    department: "Professor of Pediatrics",
+    xtraInfo: ["consultant", "NICU & PICU"],
+    reg: "A24140",
+  },
+  barCode: {
+    hnBarcode: "/Js/assets/img/barcode.png",
+    ptBarcode: "/Js/assets/img/barcode.png",
   },
   patientInfo: {
+    hnId: "H1208321321321",
     name: "baby of Urmi",
     age: "10D",
     gender: "Male",
-    contact: "01704247162",
-    text: "customer copy",
-    //?Text have possibility Duplicate copy also
-    // address: "Deodoba Aditmari Lalmonirhat",
+    address: "Narayanpur College Para, Pangsha, Rajbari",
+    visitId: "C123135464635",
+    visitDate: "24 Aug 2021",
+    visitTime: "12.35 PM",
   },
-  doctorInfo: {
-    //??
-    referedBy: "Prof. Dr. Ishrat Jahan Lucky , MBBS, FCPS, MD",
-  },
-  testInfo: [
-    { code: "haE06", testName: "CBC", storeRoom: "Lv1", ammount: "800.00" },
-    { code: "haE06", testName: "CBC", storeRoom: "Lv1", ammount: "800.00" },
-    { code: "haE06", testName: "CBC", storeRoom: "Lv1", ammount: "800.00" },
-    { code: "haE06", testName: "CBC", storeRoom: "Lv1", ammount: "800.00" },
-    { code: "haE06", testName: "CBC", storeRoom: "Lv1", ammount: "800.00" },
-    { code: "haE06", testName: "CBC", storeRoom: "Lv1", ammount: "800.00" },
+  diagnosis: [
+    {
+      complainHeader: "Chief Complain",
+      type: {
+        type: "list",
+        items: ["Fever for 2 days", "Fever for 2 days"],
+      },
+    },
+    {
+      complainHeader: "History",
+      type: {
+        type: "list-items",
+        items: [
+          {
+            itemComplainHeader: "Paediatric History",
+            complainItems: {
+              "History of Past Illness": "Needed NICU Care due to covid",
+              Weight: "2.6Kg",
+              OFC: "35 CM",
+            },
+          },
+          {
+            itemComplainHeader: "System Examination",
+            complainItems: {
+              "History of Past Illness": "Needed NICU Care due to covid",
+              Weight: "2.6Kg",
+              OFC: "35 CM",
+            },
+          },
+        ],
+      },
+    },
+    {
+      complainHeader: "Physical Examination",
+      type: {
+        type: "list-items",
+        items: [
+          {
+            itemComplainHeader: "Paediatric History",
+            complainItems: {
+              "History of Past Illness": "Needed NICU Care due to covid",
+              Weight: "2.6Kg",
+              OFC: "35 CM",
+            },
+          },
+          {
+            itemComplainHeader: "Paediatric History",
+            complainItems: {
+              "History of Past Illness": "Needed NICU Care due to covid",
+              Weight: "2.6Kg",
+              OFC: "35 CM",
+            },
+          },
+        ],
+      },
+    },
+    {
+      complainHeader: "Advice",
+      type: {
+        type: "list",
+        items: ["Hospitalaization in Cabin"],
+      },
+    },
   ],
-  delivaryDetails: {
-    delivaryInfo: {
+  prescribedMedicine: [
+    {
+      medicineName: "P/D Napa 15 MI",
+      genericName: "P/D Paracetamol 80 Mg/MI",
+      routine: {
+        quantity: "8 drops",
+        timing: "4-6 hourly",
+        duration: "7 days",
+      },
+    },
+    {
+      medicineName: "P/D Vanprox 15 MI",
+      genericName: "P/D Paracetamol 80 Mg/MI",
+      routine: {
+        quantity: "8 drops",
+        timing: "4-6 hourly",
+        duration: "7 days",
+      },
+    },
+  ],
+  footerInformation: {
+    printingInfo: {
       date: "24/08/21",
-      time: "07:00:00 PM",
+      time: "12.52 PM",
     },
-
-    TotalAmmountInfo: {
-      subTotal: "800.00",
-      netPaybale: "400.00",
-      advancePay: "200.00",
-      due: "100",
-      inWord: "Eight Hundred",
+    nextMetting:{
+      date:"24/08/21",
+      time:"12.50 PM"
     },
-    prepared: {
-      id: 987,
-      name: "Parvej",
+    AddressDTO: {
+      address: "21 Shymoli Mirpur Road , Dhaka 1207 Bangladesh",
+      phone: "09666700100",
+      hotline: "10633",
+      email:"hello@gmail.com"
     },
+    drInfo:{
+      name:"Dr. Ishrat Jahan Lucky"
+    }
   },
 };
 
 export const getModelData = () => {
-  return pathologyData;
+  return prescriptionData;
 };

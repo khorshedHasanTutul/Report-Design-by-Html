@@ -10,7 +10,7 @@
     <button>Print Opd Billing</button>
     <script type="module" defer>
       import { getModelData } from "./DataService.js";
-      import { printPrescription as print } from "./Prescription.js";
+      import { printReport as print } from "./DischargeSummary.js";
       const localprintHandler = () => {
         print(getModelData());
       };

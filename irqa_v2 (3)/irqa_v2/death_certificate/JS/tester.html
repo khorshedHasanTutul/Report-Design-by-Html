@@ -7,10 +7,10 @@
     <title>Test</title>
   </head>
   <body>
-    <button>Print Opd Billing</button>
+    <button>Print Baby Certificate</button>
     <script type="module" defer>
       import { getModelData } from "./DataService.js";
-      import { printPrescription as print } from "./Prescription.js";
+      import { printHandler as print } from "./DeathCertificate.js";
       const localprintHandler = () => {
         print(getModelData());
       };
